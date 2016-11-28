@@ -26,7 +26,7 @@ function captureDesktop() {
         path: 'images/main-icon.png'
     });
 
-    var screenSources = ['window', 'screen'];
+    var screenSources = ['window', 'screen', 'audio'];
 
     if (enableTabAudio) {
         screenSources = ['tab', 'audio'];
@@ -83,7 +83,7 @@ function onAccessApproved(chromeMediaSourceId) {
         constraints.video.mandatory.maxHeight = resolutions.maxHeight;
     }
 
-    if (enableTabAudio) {
+    if (true || enableTabAudio) {
         constraints.audio = {
             mandatory: {
                 chromeMediaSource: 'desktop',
@@ -128,7 +128,7 @@ function onAccessApproved(chromeMediaSourceId) {
                 }
             }
 
-            if (enableTabAudio || enableMicrophone) {
+            if (true || enableTabAudio || enableMicrophone) {
                 if (audioBitsPerSecond) {
                     options.audioBitsPerSecond = audioBitsPerSecond * 1000;
                 }
@@ -360,7 +360,7 @@ var videoBitsPerSecond = 0;
 
 var enableTabAudio = false;
 var enableMicrophone = false;
-var audioStream = false;
+var audioStream = true;
 
 var videoCodec = 'Default';
 var videoMaxFrameRates = '';
